@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
         }
         Instance = this;
     }
+
     private void Start()
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
             selectedCounter.Interact();
         }
     }
+
     private void Update()
     {
         HandleMovement();
@@ -53,10 +55,7 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        //Gets the normalized vector of where the Player is wants to move
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-
-        //Moves the player based on the vector
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
         float playerRadius = .7f, playerHeight = 2f;
@@ -65,34 +64,26 @@ public class Player : MonoBehaviour
         bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up*playerHeight
                         , playerRadius, moveDir, moveDistance);
 
-
-        //Cannot move towards the moveDir
         if (!canMove)
         {
-            //Attempt to only move along the X
            Vector3 moveDirX = new Vector3(moveDir.x, 0 , 0).normalized;
-           canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up*playerHeight
+           canMove = (moveDir.x != 0) && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up*playerHeight
                         , playerRadius, moveDirX, moveDistance);
+
             if (canMove)
             {
-                //Can move only on the X
                 moveDir = moveDirX;
-            }else
+            }
+            else
             {
-                Vector3 moveDirZ = new Vector3(moveDir.x, 0 , 0).normalized;
-                canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up*playerHeight
-                        , playerRadius, moveDirZ, moveDistance);
+                Vector3 moveDirZ = new Vector3(0, 0 , moveDir.z).normalized;
+                canMove = (moveDir.z != 0) && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up*playerHeight
+                                , playerRadius, moveDirZ, moveDistance);
                 if (canMove)
                 {
-                    //Can move only on the Z
                     moveDir = moveDirZ;
                 }
-                else
-                {
-                    //Cannot move in any direction
-                }
             }
-
         }
 
         if (canMove)
@@ -100,20 +91,20 @@ public class Player : MonoBehaviour
             transform.position += moveDir * moveSpeed *Time.deltaTime;
         }
         
-        //Checks if the player is moving for the animation
         isWalking = moveDir != Vector3.zero;
 
-        //Makes it so the player looks at the direction it is moving
         float rotateSpeed = 10f;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+        if (moveDir != Vector3.zero) 
+        {
+            transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+        }
     }
+
     private void HandleInteraction()
     {
-         //Gets the normalized vector of where the Player is wants to move
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-
-        //Moves the player based on the vector
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+
         if(moveDir != Vector3.zero)
         {
             lastInteractDir = moveDir;
@@ -124,24 +115,18 @@ public class Player : MonoBehaviour
         {
             if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
             {
-                //clearCounter.Interact();
                 if(clearCounter != selectedCounter)
                 {
-                    selectedCounter = clearCounter;
-                    SetSelectedCounter(selectedCounter);
+                    SetSelectedCounter(clearCounter);
                 }
-        
             }
             else
             {
-                selectedCounter = null;
-
                 SetSelectedCounter(null);
             }
-        }else
+        }
+        else
         {
-            selectedCounter = null;
-
             SetSelectedCounter(null);
         }
     }
@@ -150,8 +135,8 @@ public class Player : MonoBehaviour
     {
         this.selectedCounter = selectedCounter;
         OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
-                    {
-                        selectedCounter = selectedCounter
-                    });
+        {
+            selectedCounter = selectedCounter
+        });
     }
 }
