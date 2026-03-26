@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ClearCounter : BaseCounter
+public class ContainerCounter : BaseCounter
 {
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
     
@@ -19,4 +21,5 @@ public class ClearCounter : BaseCounter
         }
     }
 
+    
 }
