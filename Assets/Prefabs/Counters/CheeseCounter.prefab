@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheeseCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 1522780310219668230, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.369
+      objectReference: {fileID: 0}
     - target: {fileID: 7258524088653602616, guid: c61cad2b44d765c47b4c5c79640127c2,
         type: 3}
       propertyPath: m_Sprite

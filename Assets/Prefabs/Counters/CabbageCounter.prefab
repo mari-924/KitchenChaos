@@ -13,12 +13,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: CabbageCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 1522780310219668230, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.389
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160631877428913614, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e1c23b5aded59d84da30738d3267a6c9,
+        type: 3}
     - target: {fileID: 4137709127281023537, guid: c61cad2b44d765c47b4c5c79640127c2,
         type: 3}
       propertyPath: kitchenObjectSO
       value: 
       objectReference: {fileID: 11400000, guid: 260e6cd9b61f4dc4a8b2e381b3d4649f,
         type: 2}
+    - target: {fileID: 4314548806239621503, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: visualGameObjectArray.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314548806239621503, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: visualGameObjectArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 4426794682753654130}
+    - target: {fileID: 4314548806239621503, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: visualGameObjectArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 2312008189381686011}
+    - target: {fileID: 4314548806239621503, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: visualGameObjectArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 6193270931547055894}
+    - target: {fileID: 4314548806239621503, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: visualGameObjectArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 5798470029537324272}
+    - target: {fileID: 5471869323892888284, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7258524088653602616, guid: c61cad2b44d765c47b4c5c79640127c2,
         type: 3}
       propertyPath: m_Sprite
@@ -80,3 +121,27 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61cad2b44d765c47b4c5c79640127c2, type: 3}
+--- !u!1 &2312008189381686011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3445912700500723619, guid: c61cad2b44d765c47b4c5c79640127c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1137071403833095512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4426794682753654130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3650328188189894698, guid: c61cad2b44d765c47b4c5c79640127c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1137071403833095512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5798470029537324272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6899512086425754024, guid: c61cad2b44d765c47b4c5c79640127c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1137071403833095512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6193270931547055894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6500202188892312142, guid: c61cad2b44d765c47b4c5c79640127c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1137071403833095512}
+  m_PrefabAsset: {fileID: 0}

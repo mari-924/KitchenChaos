@@ -13,6 +13,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: UncookedMeatPatty
       objectReference: {fileID: 0}
+    - target: {fileID: 2160631877428913614, guid: c61cad2b44d765c47b4c5c79640127c2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa1bacc24dde76e47b2ec0dd4e82385b,
+        type: 3}
     - target: {fileID: 4137709127281023537, guid: c61cad2b44d765c47b4c5c79640127c2,
         type: 3}
       propertyPath: kitchenObjectSO
