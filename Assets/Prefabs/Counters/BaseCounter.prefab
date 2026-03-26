@@ -92,6 +92,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Selected
       objectReference: {fileID: 0}
+    - target: {fileID: 4589716710238282922, guid: 0004cb1e11ad014419b943c7da960724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4589716710238282923, guid: 0004cb1e11ad014419b943c7da960724,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -194,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f057a18f6594884fb4fc380ac4dff63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearCounter: {fileID: 0}
+  clearCounter: {fileID: 3763740898250130815}
   visualGameObject: {fileID: 6135574332198298483}
 --- !u!4 &2259675986801919127 stripped
 Transform:
@@ -224,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 3307580832469496044, guid: ef36e726f3bd316439ea03a61c79a456,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.225
       objectReference: {fileID: 0}
     - target: {fileID: 6195061605631515164, guid: ef36e726f3bd316439ea03a61c79a456,
         type: 3}
@@ -323,5 +328,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5261119aa23ee4b47bb02abe40db1605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitchenObjectSO: {fileID: 11400000, guid: 2958bb92bc34af34b912d35cc4d2849b, type: 2}
   counterTopPoint: {fileID: 5900054080190255084}
+  kitchenObjectSO: {fileID: 11400000, guid: 2958bb92bc34af34b912d35cc4d2849b, type: 2}
