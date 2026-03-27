@@ -25,6 +25,16 @@ public class ClearCounter : BaseCounter
             if (player.HasKitchenObject())
             {
                 //Player is carrying something
+                if (player.HasKitchenObject())
+                {
+                    if(player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
+                    {
+                        if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())){
+                            GetKitchenObject().DestroySelf();
+                        }
+                        
+                    }
+                }
             }
             else
             {
